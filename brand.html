@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A fictional Kigali café built to practise Tailwind v4 design tokens.">
+  <title>Umuseke | Brand kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Apply theme early to reduce a flash of the wrong theme. -->
+  
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="bg-cream font-sans text-brand-950 dark:bg-brand-950 dark:text-brand-50">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:z-50 focus:bg-white focus:p-4 focus:text-brand-900">Skip to content</a>
+  <header class="sticky top-0 z-20 border-b border-brand-200 bg-cream/95 dark:border-brand-800 dark:bg-brand-950/95">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+      <a href="/" class="font-display text-xl font-bold focus-visible:outline-2 focus-visible:outline-accent">UMUSEKE<span class="text-accent">.</span></a>
+      <nav aria-label="Main navigation" class="flex flex-wrap items-center gap-4 text-sm">
+        <a class="hover:underline focus-visible:outline-2 focus-visible:outline-accent" href="/#menu">Menu</a>
+        <a class="hover:underline focus-visible:outline-2 focus-visible:outline-accent" href="/#visit">Visit</a>
+        <a class="hover:underline focus-visible:outline-2 focus-visible:outline-accent" href="/brand.html">Brand kit</a>
+        <button id="theme-toggle" type="button" aria-pressed="false" class="btn btn-outline text-xs">Dark mode: off</button>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="mx-auto max-w-6xl px-6 py-12">
+    <p class="text-sm font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-300">The brand kit</p>
+    <h1 class="mt-3 text-4xl font-bold">One system. Every page.</h1>
+    <p class="mt-4 max-w-2xl leading-8">These are the tokens behind Umuseke. Change one value in src/style.css and watch both pages update.</p>
+    <section class="mt-12" aria-labelledby="palette-title">
+      <h2 id="palette-title" class="text-2xl font-bold">01 / Colour palette</h2>
+      <p class="mt-3">Scroll the swatches horizontally. This row uses our custom scrollbar-hidden utility.</p>
+      <div class="scrollbar-hidden mt-6 flex gap-4 overflow-x-auto pb-4" tabindex="0" role="region" aria-label="Scrollable colour palette">
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-50"></div><p class="mt-2 font-mono text-sm">bg-brand-50</p><p class="text-sm">#ecfdf5</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-100"></div><p class="mt-2 font-mono text-sm">bg-brand-100</p><p class="text-sm">#d1fae5</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-200"></div><p class="mt-2 font-mono text-sm">bg-brand-200</p><p class="text-sm">#a7f3d0</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-300"></div><p class="mt-2 font-mono text-sm">bg-brand-300</p><p class="text-sm">#6ee7b7</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-400"></div><p class="mt-2 font-mono text-sm">bg-brand-400</p><p class="text-sm">#34d399</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-500"></div><p class="mt-2 font-mono text-sm">bg-brand-500</p><p class="text-sm">#10b981</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-600"></div><p class="mt-2 font-mono text-sm">bg-brand-600</p><p class="text-sm">#059669</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-700"></div><p class="mt-2 font-mono text-sm">bg-brand-700</p><p class="text-sm">#047857</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-800"></div><p class="mt-2 font-mono text-sm">bg-brand-800</p><p class="text-sm">#065f46</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-900"></div><p class="mt-2 font-mono text-sm">bg-brand-900</p><p class="text-sm">#064e3b</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-brand-950"></div><p class="mt-2 font-mono text-sm">bg-brand-950</p><p class="text-sm">#022c22</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-accent"></div><p class="mt-2 font-mono text-sm">bg-accent</p><p class="text-sm">#f97316</p></div>
+        <div class="w-36 shrink-0"><div class="h-24 rounded-card border border-brand-300 bg-cream"></div><p class="mt-2 font-mono text-sm">bg-cream</p><p class="text-sm">#fffaf2</p></div>
+      </div>
+    </section>
+    <section class="mt-12" aria-labelledby="type-title">
+      <h2 id="type-title" class="text-2xl font-bold">02 / Typography</h2>
+      <div class="mt-6 rounded-card bg-white p-6 dark:bg-brand-900">
+        <h1 class="font-display text-4xl font-bold">H1 · A brighter morning</h1>
+        <h2 class="mt-4 font-display text-3xl font-semibold">H2 · Made in Kigali</h2>
+        <h3 class="mt-4 font-display text-xl font-semibold">H3 · Your favourite corner</h3>
+        <p class="mt-4 font-sans leading-8">Body · Inter is our reading font. Poppins is our display font. The Google Fonts link downloads both; @theme assigns their names to font-display and font-sans.</p>
+      </div>
+    </section>
+    <section class="mt-12" aria-labelledby="buttons-title">
+      <h2 id="buttons-title" class="text-2xl font-bold">03 / Buttons</h2>
+      <p class="mt-3 leading-7">Hover the first column and use Tab to reach a button. The next columns show fixed visual examples of hover and focus appearance. These sample buttons have no action.</p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full min-w-[40rem] border-separate border-spacing-4 text-left">
+          <caption class="sr-only">Three button styles in normal, hover and focus appearances</caption>
+          <thead><tr><th>Style</th><th>Normal / interactive</th><th>Hover sample</th><th>Focus sample</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Primary</th><td><button type="button" class="btn btn-primary">Primary</button></td><td><span class="btn btn-primary bg-brand-900">Primary</span></td><td><span class="btn btn-primary outline-3 outline-offset-4 outline-accent">Primary</span></td></tr>
+            <tr><th scope="row">Secondary</th><td><button type="button" class="btn btn-secondary">Secondary</button></td><td><span class="btn btn-secondary bg-brand-100">Secondary</span></td><td><span class="btn btn-secondary outline-3 outline-offset-4 outline-accent">Secondary</span></td></tr>
+            <tr><th scope="row">Outline</th><td><button type="button" class="btn btn-outline">Outline</button></td><td><span class="btn btn-outline bg-brand-100 text-brand-900">Outline</span></td><td><span class="btn btn-outline outline-3 outline-offset-4 outline-accent">Outline</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="mt-12 grid gap-6 md:grid-cols-2" aria-labelledby="card-title">
+      <article class="motion-safe:animate-fade-in rounded-card bg-white p-8 shadow-soft dark:bg-brand-900">
+        <h2 id="card-title" class="text-2xl font-bold">04 / The branded card</h2>
+        <p class="mt-4 leading-8">rounded-card gives the 1.25rem corners. shadow-soft creates depth. motion-safe:animate-fade-in adds an entrance only when reduced motion is off.</p>
+        <p class="mt-4 font-mono text-sm">Reload to see the entrance animation.</p>
+      </article>
+      <div class="rounded-card border border-brand-200 p-8 dark:border-brand-800">
+        <h2 class="text-2xl font-bold">05 / Responsive tokens</h2>
+        <div class="mt-4 flex flex-col gap-3 xs:flex-row"><span class="rounded-full bg-brand-100 px-4 py-2 text-brand-900">One</span><span class="rounded-full bg-brand-100 px-4 py-2 text-brand-900">Two</span></div>
+        <p class="mt-4 leading-8">These pills stack below xs (30rem ≈ 480px) and sit in a row above it. Test with your browser's responsive toolbar.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="mt-16 border-t border-brand-200 px-6 py-8 text-center text-sm dark:border-brand-800">
+    <p>Umuseke Café · Fictional Kigali business · Tailwind v4 practice project</p>
+    <p class="mt-2"><a href="/brand.html" class="underline">Brand kit</a></p>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

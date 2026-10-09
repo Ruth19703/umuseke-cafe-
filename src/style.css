@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 3. Design tokens create named utilities. Keep @theme at top level. */
+@theme {
+  --color-brand-50: #ecfdf5;
+  --color-brand-100: #d1fae5;
+  --color-brand-200: #a7f3d0;
+  --color-brand-300: #6ee7b7;
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065f46;
+  --color-brand-900: #064e3b;
+  --color-brand-950: #022c22;
+  --color-accent: #f97316;
+  --color-cream: #fffaf2;
+  --font-display: "Poppins", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --spacing: 0.25rem;
+  --breakpoint-xs: 30rem;
+  --radius-card: 1.25rem;
+  --shadow-soft: 0 10px 30px -12px rgb(0 0 0 / 0.25);
+  --animate-fade-in: fade-in 0.5s ease-out both;
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* 4. Ordinary variables: useful values, without generating named utilities. */
+:root { --section-gap: 4rem; color-scheme: light; }
+:root.dark { color-scheme: dark; }
+
+/* 5. Defaults for semantic HTML. Utility classes can override these. */
+@layer base {
+  body { margin: 0; }
+  h1, h2, h3 { font-family: var(--font-display); }
+  button, summary { cursor: pointer; }
+  section[id] { scroll-margin-top: 6rem; }
+}
+
+/* 6. A reusable utility. responsive variants work with it too. */
+@utility scrollbar-hidden {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+/* 7. Small reusable component styles; utilities still win in the cascade. */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    transition: background-color 150ms, color 150ms;
+  }
+  .btn:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+  .btn-primary { background: var(--color-brand-700); color: white; }
+  .btn-primary:hover { background: var(--color-brand-900); }
+  .btn-secondary { background: var(--color-accent); color: var(--color-brand-950); }
+  .btn-secondary:hover { background: var(--color-brand-100); }
+  .btn-outline { border: 2px solid currentColor; }
+  .btn-outline:hover { background: var(--color-brand-100); color: var(--color-brand-900); }
+}
